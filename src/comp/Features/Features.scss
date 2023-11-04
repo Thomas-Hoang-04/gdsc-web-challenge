@@ -1,0 +1,35 @@
+@tailwind components;
+
+@layer components {
+  .features {
+    @apply px-6 text-center w-screen flex flex-col items-center justify-center py-12 pb-20 bg-neut-gray bg-opacity-[0.15];
+
+    h1 {
+      @apply text-[1.65rem] font-bold text-neut-dark-violet mb-4;
+    }
+
+    p {
+      @apply text-neut-grayish-violet text-[1rem] leading-7 mb-[5.5rem];
+    }
+
+    span {
+      @apply w-2 h-[4.25rem] bg-pri-cyan mb-6;
+    }
+  }
+
+  .feature {
+    @apply flex flex-col items-center gap-4 bg-white rounded-md px-6;
+
+    .icon-pld {
+      @apply bg-pri-dark-violet relative bottom-10 rounded-full p-5 flex items-center justify-center;
+    }
+
+    h1 {
+      @apply tracking-tight -mt-6  mb-0 text-[1.45rem];
+    }
+
+    p {
+      @apply mb-10 text-[1rem] ms-2 me-2 tracking-tight;
+    }
+  }
+}

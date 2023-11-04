@@ -1,0 +1,30 @@
+@tailwind components;
+
+@layer components {
+  .link-box {
+    @apply px-6;
+  }
+
+  .input-box {
+    @apply p-6 flex flex-col bg-pri-dark-violet rounded-lg;
+    background-image: url("../../Images/bg-shorten-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    input {
+      @apply p-3 rounded-md focus:outline-pri-dark-violet focus-within:outline-pri-dark-violet focus-visible:outline-pri-dark-violet;
+    }
+
+    .inp-error {
+      @apply border-[3px] border-sec-red outline-none placeholder:text-sec-red placeholder:opacity-60;
+    }
+
+    button {
+      @apply bg-pri-cyan p-3 mt-4 rounded-md text-neutral-100 font-semibold px-10 text-[1.1rem] tracking-wide;
+    }
+
+    .error {
+      @apply text-sec-red text-xs font-prime-italic flex items-center gap-2 mt-2;
+    }
+  }
+}
