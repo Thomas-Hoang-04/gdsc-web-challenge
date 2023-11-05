@@ -2,7 +2,7 @@
 
 @layer components {
   .features {
-    @apply px-6 text-center w-screen flex flex-col items-center justify-center py-12 pb-20 bg-neut-gray bg-opacity-[0.15];
+    @apply px-6 text-center w-screen flex flex-col items-center justify-center py-12 pb-20 bg-neut-gray bg-opacity-20;
 
     h1 {
       @apply text-[1.65rem] font-bold text-neut-dark-violet mb-4;

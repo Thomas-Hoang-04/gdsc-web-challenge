@@ -2,12 +2,19 @@
 
 @layer components {
   .link-box {
-    @apply px-6;
+    @apply px-6 py-8;
+    background: linear-gradient(
+      180deg,
+      white 0%,
+      white 50%,
+      hsla(0, 0%, 75%, 0.2) 50%,
+      hsla(0, 0%, 75%, 0.2) 100%
+    );
   }
 
   .input-box {
     @apply p-6 flex flex-col bg-pri-dark-violet rounded-lg;
-    background-image: url("../../Images/bg-shorten-mobile.svg");
+    background-image: url("../../assets/images/bg-shorten-mobile.svg");
     background-repeat: no-repeat;
     background-position: top right;
 

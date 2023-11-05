@@ -5,6 +5,7 @@ import FooterHero from "./comp/Footer/FooterHero";
 import Header from "./comp/Header/Header";
 import Hero from "./comp/Hero/Hero";
 import InputBox from "./comp/Input/InputBox";
+import SynthLink from "./comp/HOC/SynthLink";
 
 function App() {
   return (
@@ -12,7 +13,9 @@ function App() {
       <Header />
       <main className="">
         <Hero />
-        <InputBox />
+        <SynthLink>
+          <InputBox />
+        </SynthLink>
         <Features />
         <FooterHero />
       </main>

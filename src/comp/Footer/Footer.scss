@@ -3,7 +3,7 @@
 @layer components {
   .footer-hero {
     @apply bg-pri-dark-violet w-screen h-[18.5rem] flex justify-center items-center flex-col;
-    background-image: url("../../Images/bg-boost-mobile.svg");
+    background-image: url("../../assets/images/bg-boost-mobile.svg");
 
     h1 {
       @apply text-white mt-6 text-[1.75rem] font-semibold text-center;
