@@ -2,34 +2,82 @@
 
 @layer components {
   .features {
-    @apply px-6 text-center w-screen flex flex-col items-center justify-center py-12 pb-20 bg-neut-gray bg-opacity-20;
+    @apply text-center w-screen flex flex-col items-center justify-center bg-neut-gray bg-opacity-20;
 
     h1 {
-      @apply text-[1.65rem] font-bold text-neut-dark-violet mb-4;
+      @apply text-[1.65rem] font-bold text-neut-dark-violet mb-4 xl:text-[2.75rem];
     }
 
-    p {
-      @apply text-neut-grayish-violet text-[1rem] leading-7 mb-[5.5rem];
+    #features {
+      @apply text-neut-grayish-violet text-[1rem] leading-7 mb-[5.5rem] xl:text-[1.25rem] xl:leading-[1.75] xl:w-[50%];
     }
 
     span {
-      @apply w-2 h-[4.25rem] bg-pri-cyan mb-6;
+      @apply w-2 h-[4.25rem] xl:w-[8rem] xl:h-2 bg-pri-cyan mb-6;
     }
   }
 
+  .card-pld {
+    @apply flex flex-col items-center justify-center;
+  }
+
   .feature {
-    @apply flex flex-col items-center gap-4 bg-white rounded-md px-6;
+    @apply flex flex-col items-center gap-4 bg-white rounded-md px-6 xl:px-8 xl:items-start;
 
     .icon-pld {
       @apply bg-pri-dark-violet relative bottom-10 rounded-full p-5 flex items-center justify-center;
     }
 
     h1 {
-      @apply tracking-tight -mt-6  mb-0 text-[1.45rem];
+      @apply tracking-tight -mt-6 mb-0 text-[1.45rem] xl:text-left;
     }
 
     p {
-      @apply mb-10 text-[1rem] ms-2 me-2 tracking-tight;
+      @apply text-neut-grayish-violet leading-7 mb-10 text-[1rem] ms-2 me-2 tracking-tight xl:ms-0 xl:text-left;
+    }
+  }
+
+  @media screen and (max-width: 976px) {
+    .features {
+      padding: 3rem clamp(1.5rem, 6vw, 10rem) 5rem;
+    }
+  }
+
+  @media screen and (min-width: 976px) {
+    .features {
+      @apply px-[12rem] pt-6 pb-20;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .features {
+      @apply pt-16 pb-28;
+    }
+
+    .card-pld {
+      @apply flex flex-row items-center justify-center;
+    }
+
+    .feature:nth-of-type(1) {
+      @apply mt-[-4.5rem];
+    }
+
+    .feature:nth-of-type(2) {
+      @apply mt-[1rem];
+
+      p {
+        @apply me-0;
+      }
+    }
+
+    .feature:nth-of-type(3) {
+      @apply mt-[7rem];
+    }
+  }
+
+  .feature:nth-of-type(2) {
+    p {
+      @apply 2xl:me-8;
     }
   }
 }

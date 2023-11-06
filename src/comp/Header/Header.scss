@@ -2,11 +2,18 @@
 
 @layer components {
   .header {
-    @apply pt-8 pb-2 flex items-center justify-between px-6 w-screen;
+    @apply flex items-center max-lg:justify-between w-screen lg:gap-8 xl:gap-[3.5rem];
+    padding: 2rem clamp(1.5rem, 6vw, 10rem) 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    .header {
+      @apply px-[9.5rem];
+    }
   }
 
   .menu-mobile {
-    @apply items-center flex-col opacity-0 mx-5 -translate-x-3/4 my-4 transition-all duration-500 ease-in-out bg-pri-dark-violet text-white rounded-lg shadow-lg py-6 px-2 absolute z-10;
+    @apply items-center flex-col opacity-0 mx-5 sm:mx-8 md:mx-12 -translate-x-[100%]  max-w-[400px] my-6 transition-all duration-500 ease-in-out bg-pri-dark-violet text-white rounded-lg shadow-lg py-4 px-2 absolute z-10;
     width: calc(100vw - 2.25rem);
     &.active {
       @apply flex h-auto opacity-100 translate-x-0;
@@ -22,6 +29,30 @@
 
     li:last-of-type {
       @apply mb-0;
+    }
+
+    button {
+      @apply bg-pri-cyan p-3 rounded-full w-full hover:opacity-50 transition-all ease-in-out duration-300;
+    }
+  }
+
+  .menu-desktop {
+    @apply hidden lg:flex items-center justify-between grow;
+
+    ul {
+      @apply flex items-center gap-10;
+    }
+
+    ul:last-of-type {
+      @apply gap-[2.25rem];
+    }
+
+    li {
+      @apply text-[1.2rem] font-bold tracking-[0.01rem] cursor-pointer text-neut-grayish-violet hover:text-pri-dark-violet transition-all ease-in-out duration-300;
+    }
+
+    button {
+      @apply bg-pri-cyan font-semibold p-3 px-8 text-neutral-50 rounded-full hover:opacity-50 transition-all ease-in-out duration-300;
     }
   }
 }

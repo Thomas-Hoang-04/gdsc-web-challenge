@@ -32,7 +32,7 @@ const Footer = (): JSX.Element => (
               icon={icon.icon}
               color="hsl(150, 6%, 93%)"
               size="xl"
-              className="cursor-pointer"
+              className="cursor-pointer hover:text-pri-cyan transition-all ease-in-out duration-200"
               aria-label={icon.brand}
               aria-description={`${icon.brand} Icon`}
             />

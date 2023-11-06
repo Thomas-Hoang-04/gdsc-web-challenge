@@ -1,7 +1,11 @@
 {
   "name": "gdsc-web-challenge",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "homepage": "https://thomas-shortly.vercel.app/",
+  "description": "This is a web challenge for GDSC",
+  "main": "main.tsx",
+  "author": "Minh Hai Hoang",
   "type": "module",
   "scripts": {
     "dev": "vite",

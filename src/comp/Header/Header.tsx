@@ -22,19 +22,58 @@ const Header = (): JSX.Element => {
           icon={faBars}
           color="hsl(0, 0%, 70%)"
           size="2xl"
-          className="md:hidden cursor-pointer"
+          className="lg:hidden cursor-pointer"
           onClick={() => setDisplayMenu(!displayMenu)}
           aria-label="Menu"
           aria-controls="menu-mobile"
           aria-description="Hamburger menu icon"
         />
+        <nav className="menu-desktop" aria-label="Primary Menu">
+          <ul>
+            <li
+              aria-label="Features"
+              onClick={() =>
+                document.getElementById("feat-box")?.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                  inline: "nearest",
+                })
+              }>
+              Features
+            </li>
+            <li aria-label="Pricing">Pricing</li>
+            <li aria-label="Resources">Resources</li>
+          </ul>
+          <ul>
+            <li aria-label="Login" className="mr-2">
+              Login
+            </li>
+            <li>
+              <button
+                aria-label="Sign up"
+                aria-description="Sign up with Shortly">
+                Sign Up
+              </button>
+            </li>
+          </ul>
+        </nav>
       </header>
 
       <nav
         className={`menu-mobile${displayMenu ? " active" : ""}`}
         aria-label="Primary Menu">
         <ul>
-          <li aria-label="Features">Features</li>
+          <li
+            aria-label="Features"
+            onClick={() =>
+              document.getElementById("feat-box")?.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+                inline: "nearest",
+              })
+            }>
+            Features
+          </li>
           <li aria-label="Pricing">Pricing</li>
           <li aria-label="Resources">Resources</li>
         </ul>
@@ -43,7 +82,6 @@ const Header = (): JSX.Element => {
           <li aria-label="Login">Login</li>
           <li className="w-full">
             <button
-              className="bg-pri-cyan p-3 rounded-full w-full"
               aria-label="Sign up"
               aria-description="Sign up with Shortly">
               Sign Up

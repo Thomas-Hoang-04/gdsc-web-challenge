@@ -11,11 +11,9 @@ function App() {
   return (
     <>
       <Header />
-      <main className="">
+      <main>
         <Hero />
-        <SynthLink>
-          <InputBox />
-        </SynthLink>
+        <SynthLink children={<InputBox />} />
         <Features />
         <FooterHero />
       </main>

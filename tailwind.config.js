@@ -17,9 +17,11 @@ export default {
   theme: {
     screens: {
       phone: "320px",
+      "lg-phone": "425px",
       sm: "576px",
       md: "768px",
       lg: "976px",
+      laptop: "1024px",
       xl: "1280px",
       "2xl": "1440px",
       "3xl": "1880px",

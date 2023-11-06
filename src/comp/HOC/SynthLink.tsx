@@ -1,15 +1,29 @@
 import axios from "axios";
-import { useEffect, useState, Children, cloneElement } from "react";
-import { useImmer } from "use-immer";
+import {
+  useEffect,
+  useState,
+  Children,
+  cloneElement,
+  createContext,
+  useContext,
+} from "react";
+import { Updater, useImmer } from "use-immer";
+
+export const idGen = (): string =>
+  (Math.random() + 1).toString(36).substring(6);
 
 export interface LinkList {
   org_url: string;
   short_url: string;
+  copied: boolean;
 }
+
+const SetCopyContext = createContext<Updater<LinkList[]>>((): void => {});
+export const useSetCopyContext = () => useContext(SetCopyContext);
 
 const exists = (arr: LinkList[], link: string): boolean => {
   let res = false;
-  arr.forEach(item => {
+  arr.map(item => {
     if (item.org_url === link) {
       res = true;
     }
@@ -45,10 +59,10 @@ const SynthLink = ({ children }: { children: JSX.Element }): JSX.Element => {
               draft.push({
                 org_url: link,
                 short_url: res.data.result_url,
+                copied: false,
               });
             });
           }
-          console.log(linkList);
         })
         .catch(err => {
           console.log(err);
@@ -56,11 +70,11 @@ const SynthLink = ({ children }: { children: JSX.Element }): JSX.Element => {
   }, [link]);
 
   return (
-    <>
+    <SetCopyContext.Provider value={setResLink}>
       {Children.map(children, child =>
         cloneElement(child, { linkList, setLink })
       )}
-    </>
+    </SetCopyContext.Provider>
   );
 };
 

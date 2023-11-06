@@ -1,8 +1,8 @@
 @tailwind components;
 
 @layer components {
-  .link-box {
-    @apply px-6 py-8;
+  .linkinp-box {
+    padding: 2rem clamp(1.5rem, 6vw, 10rem);
     background: linear-gradient(
       180deg,
       white 0%,
@@ -13,13 +13,10 @@
   }
 
   .input-box {
-    @apply p-6 flex flex-col bg-pri-dark-violet rounded-lg;
-    background-image: url("../../assets/images/bg-shorten-mobile.svg");
-    background-repeat: no-repeat;
-    background-position: top right;
+    @apply p-6 flex flex-col lg:flex-row lg:items-center bg-pri-dark-violet rounded-lg lg:gap-4 lg:py-8 lg:px-10 laptop:py-10 laptop:px-12 lg:text-[1.2rem];
 
     input {
-      @apply p-3 rounded-md focus:outline-pri-dark-violet focus-within:outline-pri-dark-violet focus-visible:outline-pri-dark-violet;
+      @apply p-3 rounded-md focus:outline-pri-dark-violet focus-within:outline-pri-dark-violet focus-visible:outline-pri-dark-violet w-full lg:px-6 lg:py-4;
     }
 
     .inp-error {
@@ -27,11 +24,76 @@
     }
 
     button {
-      @apply bg-pri-cyan p-3 mt-4 rounded-md text-neutral-100 font-semibold px-10 text-[1.1rem] tracking-wide;
+      @apply bg-pri-cyan lg:font-bold lg:text-[1.25rem] p-3 mt-4 lg:py-[1.15rem] lg:mt-0 rounded-md text-neutral-100 font-semibold px-10 text-[1.1rem] tracking-wide hover:bg-cyan-200 transition-all ease-in-out duration-300;
     }
 
     .error {
-      @apply text-sec-red text-xs font-prime-italic flex items-center gap-2 mt-2;
+      @apply text-sec-red text-xs lg:text-base lg:mt-3 font-prime-italic flex items-center gap-2 mt-2;
+    }
+  }
+
+  .links-pld {
+    @apply bg-neut-gray bg-opacity-20;
+
+    .link-box {
+      @apply flex flex-col p-4 lg:px-8 bg-white rounded-md mb-6 lg:flex-row lg:items-center lg:gap-6;
+    }
+
+    hr {
+      @apply my-2 -mx-4;
+    }
+
+    .short-link {
+      @apply text-pri-cyan hover:text-pri-dark-violet transition-all ease-in text-[1.1rem] lg:text-[1.2rem] cursor-pointer;
+    }
+
+    p {
+      @apply text-[1.1rem] lg:text-[1.2rem] lg:max-w-[30ch] xl:max-w-[36ch] 2xl:max-w-[42ch] text-ellipsis overflow-clip whitespace-nowrap;
+    }
+
+    .copy {
+      @apply bg-pri-cyan p-2 mt-4 lg:p-3 xl:px-10 lg:px-8 lg:mt-0 rounded-md text-neutral-100 font-semibold lg:font-bold px-10 text-[1rem] lg:text-[1.1rem] hover:opacity-50 transition-all ease-in-out duration-300;
+    }
+
+    .ed {
+      @apply bg-pri-dark-violet xl:px-[1.77rem] lg:px-[1.25rem] hover:opacity-100;
+    }
+  }
+
+  @media screen and (min-width: 976px) {
+    .linkinp-box {
+      @apply px-[9.5rem];
+    }
+
+    .input-box {
+      background-image: url("../../assets/images/bg-shorten-desktop.svg");
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: 105%;
+    }
+
+    .link {
+      @apply flex grow items-center justify-between w-max;
+    }
+
+    .links-pld {
+      @apply px-[9.5rem] pb-8;
+    }
+  }
+
+  @media screen and (max-width: 976px) {
+    .links-pld {
+      padding: 0 clamp(1.5rem, 6vw, 10rem) 2rem;
+    }
+
+    .linkinp-box {
+      padding: 2rem clamp(1.5rem, 6vw, 10rem);
+    }
+
+    .input-box {
+      background-image: url("../../assets/images/bg-shorten-mobile.svg");
+      background-repeat: no-repeat;
+      background-position: top right;
     }
   }
 }
