@@ -36,7 +36,7 @@
     @apply bg-neut-gray bg-opacity-20;
 
     .link-box {
-      @apply flex flex-col p-4 lg:px-8 bg-white rounded-md mb-6 lg:flex-row lg:items-center lg:gap-6;
+      @apply flex flex-col p-4 lg:px-8 bg-white rounded-md mb-6 laptop:flex-row laptop:items-center lg:gap-6;
     }
 
     hr {
