@@ -68,7 +68,7 @@ const Header = (): JSX.Element => {
             onClick={() =>
               document.getElementById("feat-box")?.scrollIntoView({
                 behavior: "smooth",
-                block: "center",
+                block: "start",
                 inline: "nearest",
               })
             }>
