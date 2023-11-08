@@ -4,7 +4,7 @@
   .hero {
     @apply flex flex-col items-center h-max mb-8 lg:mb-0 w-screen lg:flex-row-reverse lg:py-16 xl:pl-[9.5rem] 2xl:py-[8rem] xl:py-[6rem];
     img {
-      @apply scale-[1.3] relative top-[5rem] left-[5.5rem] sm:scale-[1.15] md:top-[5.25rem] md:left-[7rem] lg:scale-[1.1] lg:top-0 xl:scale-[180%] lg:left-[2.5rem] xl:-left-[5rem];
+      @apply scale-[1.3] relative top-[5rem] left-[5.5rem] sm:scale-[1.15] md:top-[5.25rem] md:left-[7rem] lg:scale-[1.1] lg:top-0 xl:scale-[180%] lg:left-[2.5rem] xl:-left-[5rem] min-[1700px]:scale-150 min-[2000px]:scale-[130%];
     }
 
     .hero-description {
