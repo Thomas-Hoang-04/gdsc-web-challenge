@@ -53,7 +53,6 @@ const SynthLink = ({ children }: { children: JSX.Element }): JSX.Element => {
           data: encURL,
         })
         .then(res => {
-          console.log(res.data.result_url);
           if (!exists(linkList, link)) {
             setResLink(draft => {
               draft.push({
