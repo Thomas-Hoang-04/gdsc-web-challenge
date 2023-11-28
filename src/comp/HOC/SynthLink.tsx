@@ -47,7 +47,7 @@ const SynthLink = ({ children }: { children: JSX.Element }): JSX.Element => {
           },
         })
         .then(res => {
-          if (!exists(linkList, link)) {
+          if (!exists(linkList, link) && !!!res.data.errorcode) {
             setResLink(draft => {
               draft.push({
                 org_url: link,

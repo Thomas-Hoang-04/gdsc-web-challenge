@@ -87,7 +87,7 @@ const InputBox = ({
     ) {
       dispatch({ type: Error.invalid });
     } else if (
-      /^https:\/\/goolnk\..*/g.test(inputRef.current?.value as string)
+      /^https:\/\/is\.gd\/.*/g.test(inputRef.current?.value as string)
     ) {
       dispatch({ type: Error.repeat });
     } else {
