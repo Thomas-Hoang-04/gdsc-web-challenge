@@ -36,28 +36,22 @@ const SynthLink = ({ children }: { children: JSX.Element }): JSX.Element => {
   const [linkList, setResLink] = useImmer<LinkList[]>([]);
 
   useEffect(() => {
-    const encURL = new URLSearchParams({
-      url: link,
-    });
-
     link != "" &&
       axios
         .request({
           method: "POST",
           url: `${import.meta.env.VITE_API_URL}`,
-          headers: {
-            "content-type": "application/x-www-form-urlencoded",
-            "X-RapidAPI-Key": `${import.meta.env.VITE_API_KEY}`,
-            "X-RapidAPI-Host": `${import.meta.env.VITE_API_HOST}`,
+          params: {
+            format: "json",
+            url: link,
           },
-          data: encURL,
         })
         .then(res => {
           if (!exists(linkList, link)) {
             setResLink(draft => {
               draft.push({
                 org_url: link,
-                short_url: res.data.result_url,
+                short_url: res.data.shorturl,
                 copied: false,
               });
             });
